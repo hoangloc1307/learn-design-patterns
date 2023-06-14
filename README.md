@@ -26,10 +26,10 @@
 | S         | Decorato                                      |             |             |
 | S         | Flyweight                                     |             |             |
 | -----     | -----                                         | -----       | -----       |
-| B         | [Strategy](./behavioral_patterns/Strategy.md) | ★           | ★★★         |
+| B         | [Strategy](./behavioral_patterns/Strategy.md) | ★☆☆         | ★★★         |
 | B         | Template Method                               |             |             |
 | B         | Memento                                       |             |             |
-| B         | Observer                                      |             |             |
+| B         | [Observer](./behavioral_patterns/Observer.md) | ★★☆         | ★★★         |
 | B         | Iterator                                      |             |             |
 | B         | Command                                       |             |             |
 | B         | State                                         |             |             |

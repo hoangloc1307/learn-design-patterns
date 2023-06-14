@@ -8,7 +8,7 @@
 
 **Strategy pattern** cho phép bạn xác định một nhóm thuật toán, đặt từng thuật toán vào một lớp riêng biệt và làm cho các đối tượng của chúng có thể hoán đổi cho nhau.
 
-![](../images/strategy.png)
+![](../images/strategy/strategy.png)
 
 ---
 
@@ -22,7 +22,7 @@ Phiên bản đầu tiên của ứng dụng chỉ có thể xây dựng lộ tr
 
 Tuy nhiên, đó chỉ mới là bắt đầu. Về sau, bạn đã lên kế hoạch xây dựng lộ trình dành cho người đi xe đạp. Và thậm chí sau này, một tuỳ chọn khác để xây dựng lộ trình đi ngang qua các điểm thu hút khách du lịch của thành phố.
 
-![](../images/strategy_problem.png)
+![](../images/strategy/strategy_problem.png)
 
 Nhìn từ khía cạnh kinh doanh thì ứng dụng của bạn đã thành công, còn về mặt kỹ thuật lại phải khiến bạn phải đau đầu. Mỗi lần bạn thêm một thuật toán xác định lộ trình, class Navigator tăng gấp đôi kích thước. Tại một thời điểm nào đó, ứng dụng sẽ trở nên quá khó để bảo trì.
 
@@ -42,7 +42,7 @@ Context sẽ không chịu trách nhiệm chọn thuật toán thích hợp cho 
 
 Bằng cách này, context sẽ trở nên độc lập với các chiến lược cụ thể. Vì vậy bạn có thể thêm thuật toán mới hoặc sửa thuật toán của các chiến lược đã tồn tại mà không làm thay đổi code của context hoặc các chiến lược khác.
 
-![](../images/strategy_solution.png)
+![](../images/strategy/strategy_solution.png)
 
 Trong ứng dụng chỉ đường của chúng ta, mỗi thuật toán xấy dựng lộ trình có thể tách ra nhiều class riêng với một phương thức `buildRoute`. Phương thức này nhận vào điểm hiện tại và điểm đích và trả về một tập hợp các lộ trình.
 
@@ -52,7 +52,7 @@ Mặc dù nhận vào cùng các đối số, mỗi class chiến lược khác 
 
 ## **🌏 Liên hệ thực tế**
 
-![](../images/strategy_real_world.png)
+![](../images/strategy/strategy_real_world.png)
 
 Hãy tưởng tượng rằng bạn sẽ đi tới sân bay. Bạn có thể đi xe bus, bắt taxi hoặc đi bằng xe đạp. Đó là những chiến lược vận chuyển của bạn. Bạn có thể chọn 1 trong những chiến lược đó tuỳ vào số tiền hoặc thời gian.
 
@@ -60,7 +60,7 @@ Hãy tưởng tượng rằng bạn sẽ đi tới sân bay. Bạn có thể đi
 
 ## **🏢 Cấu trúc**
 
-![](../images/strategy_structure.png)
+![](../images/strategy/strategy_structure.png)
 
 1. **Context** duy trì tham chiến đến 1 trong những chiến lược cụ thể và chỉ giao tiếp với đối tượng này thông qua **Strategy** interface.
 2. **Strategy** interface xài chung cho tất cả chiến lược cụ thể. Nó khai báo một phương thức mà context sử dụng để thực thi một chiến lược.
@@ -177,13 +177,17 @@ Strategy pattern cho phép bạn tách code, dữ liệu và các thành phần 
 
 Strategy pattern cho phép bạn loại bỏ các điều kiện như vậy bằng cách tách các thuật toán thành các lớp riêng biệt và tất cả cùng implement một interface. Object ban đầu sẽ uỷ quyền thực thi cho một trong các object này thay vì thực thi hết tất cả biến thể của thuật toán.
 
-## **📋 Cách thực hiện**
+---
+
+## **📋 Cách triển khai**
 
 1. Trong class context xác định một thuật toán dễ bị thay đổi thường xuyên. Nó có thể là một điều kiện lớn để chọn và thực thi một biến thể khác của cùng một thuật toán khi chạy ở runtime.
 2. Khai báo một strategy interface chung cho tất cả các thuật toán.
 3. Từng bước tách các thuật toán thành một class riêng và implement strategy interface.
 4. Trong context class thêm một trường để tham chiếu đến một object chiến lược. Cung cấp phương thức setter để có thể thay đổi giá trị của trường đó. Context chỉ nên làm việc với object chiến lược thông qua strategy interface. Context có thể định nghĩa một interface cho phép chiến lược truy cập được dữ liệu của nó.
 5. Client của context phải kết hợp nó với một chiến lược phù hợp với cách họ mong đợi context thực hiện công việc chính của nó.
+
+---
 
 ## **⚖ Ưu điểm và nhược điểm**
 
